@@ -1,24 +1,44 @@
 {{ define "main" }}
 <main class="main list" role="main">
-	{{- with .Content }}
 	<div class="content main__content clearfix">
-		{{ . }}
+		<p>
+			Welcome to DAHRSE-Midlands! We are a community of Digital Arts and Humanities Research Software Engineers (DAHRSEs) within the Midlands in England.
+		</p>
+		<h2>Get involved</h2>
+		<ul>
+			<li><strong>Future Events</strong>: We are planning targeted surveys and workshops. If you are interested in participating, please contact <a href="mailto:g.yeboah@warwick.ac.uk">Dr. Godwin Yeboah</a>.</li>
+			<li><strong>Join Our Community</strong>: Join our Slack channel "<a href="https://ukrse.slack.com/archives/C088WTMB1PZ">#dahrse-midlands</a>" in the <a href="https://join.slack.com/t/ukrse/signup">RSE Society's Slack workspace</a> and follow us on social media! Please see other social media channels on this page.</li>
+			<li><strong>Add Your Profile to the Community Network Page</strong>: Please send your profile information to be added to the community network page currently being developed. The initial information being collected are as follows:</li>
+			<ul>
+			  <li><strong>Name</strong>: Full name.</li>
+			  <li><strong>Role/Title (and scope)</strong>: Your current role or title within the organization or project. Please indicate in brackets the scope of your role/title. For example, Senior Research Software Engineer (Arts and Humanities, Social Sciences).</li>
+			  <li><strong>Affiliation</strong>: The institution or organization you are associated with.</li>
+			  <li><strong>Expertise/Research Interests</strong>: A brief description of your areas of expertise or research interests.</li>
+			  <li><strong>Contact Information</strong>: Email address or other preferred contact method.</li>
+			  <li><strong>Social Media</strong>: Social media handles like X, Bluesky, Mastodon, LinkedIn, etc.</li>
+			</ul>
+			The website will be altered in the future to allow direct contribution using Github or other available options.
+		  </ul>
+		<!-- <img src="" alt=""> -->
+	</div>
+	{{- with .Content }}
+		<!-- {{ . }} -->
 	</div>
 	{{- end }}
-	{{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
+	<!-- {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
 	{{- range $paginator.Pages }}
 		{{- .Render "summary" }}
-	{{- end }}
+	{{- end }} -->
 	{{- if and (eq $paginator.TotalNumberOfElements 0) (not $.Content) }}
-		<div class="warning">
+		<!-- <div class="warning">
 			{{ partial "svg/files.svg" (dict "class" "warning__icon") }}
 			<h3 class="warning__headline">{{ T "noposts_warning_title" | safeHTML }}</h3>
 			<div class="warning__text">
 				<p class="warning__description">{{ T "noposts_warning_description" | safeHTML }}</p>
 				<p class="warning__tip">{{ T "noposts_warning_tip" | safeHTML }}</p>
 			</div>
-		</div>
+		</div> -->
 	{{ end }}
 </main>
-{{ partial "pagination.html" . }}
+<!-- {{ partial "pagination.html" . }} -->
 {{ end }}

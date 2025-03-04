@@ -10,11 +10,31 @@
 			</a>
 		</div>
 		{{- end }}
+		<!--Adapted image from free service - https://www.svgrepo.com/svg/330895/mastodon-->
+		{{- with .Site.Params.widgets.social.mastodon }}
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Mastadon" rel="noopener noreferrer" href="https://www.mastodon.social/@{{ . }}" target="_blank">
+				{{ partial "svg/mastodon.svg" (dict "class" "widget-social__link-icon") }}
+				<span>Mastadon</span>
+			</a>
+		</div>
+		{{- end }}
+        <!--Adapted image from free service - https://www.svgrepo.com/svg/330895/mastodon-->		
+		<!--Bluesky addition - https://www.svgrepo.com/svg/330895/mastodon-->
+		{{- with .Site.Params.widgets.social.bluesky }}
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Bluesky" rel="noopener noreferrer" href="https://bsky.app/profile/{{ . }}" target="_blank">
+				{{ partial "svg/bluesky.svg" (dict "class" "widget-social__link-icon") }}
+				<span>Bluesky</span>
+			</a>
+		</div>
+		{{- end }}
+		<!--Bluesky addition - https://www.svgrepo.com/svg/330895/mastodon-->	
 		{{- with .Site.Params.widgets.social.twitter }}
 		<div class="widget-social__item widget__item">
-			<a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer" href="https://twitter.com/{{ . }}" target="_blank">
+			<a class="widget-social__link widget__link btn" title="X (Twitter)" rel="noopener noreferrer" href="https://twitter.com/{{ . }}" target="_blank">
 				{{ partial "svg/twitter.svg" (dict "class" "widget-social__link-icon") }}
-				<span>Twitter</span>
+				<span>X (formerly Twitter)</span>
 			</a>
 		</div>
 		{{- end }}
